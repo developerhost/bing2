@@ -25,6 +25,10 @@ for(let i = 1; i <= COLUMN_LENGTH * ROW_LENGTH; i++){
     divSquare.onclick = () => divSquare.classList.toggle('gray');
     let targetIndex = Math.floor(Math.random() * targetNumber.length) ;     
     div.textContent = targetNumber[targetIndex];
+    
+    // 変更点　四角形全てに固有のIDをフル処理
+    //<div class="square" id="square16"></div><div>16</div>になる
+    divSquare.setAttribute("id", "square" + targetNumber[targetIndex]);
     targetNumber.splice(targetIndex, 1);
   }
   divSquare.appendChild(div)
@@ -36,7 +40,7 @@ for(let i = 1; i <= COLUMN_LENGTH * ROW_LENGTH; i++){
 let main = document.getElementById('main');
 let button = document.getElementById('button');
 let history = document.getElementById('history');
-let historyArray = [];
+let historyArray = []; //ここに出た数値を格納
 
 for(let i = 1; i <= MAX_NUMBER; i++){
   targetNumber.push(i);
@@ -65,7 +69,13 @@ button.onclick = () => {
     targetNumber.splice(targetIndex, 1);
     historyArray.push(main.textContent);
     history.textContent = historyArray;
+
+    //数値が出ると色が変わるように処理
+    // main.textContentに出た数字が入っていたので、そのidを持つ要素を検索してgrayを付与するように角。
+    const div_target = document.getElementById("square" + main.textContent);
+    div_target.classList.add("gray");
   }
-}
+  
+};
 
 }
