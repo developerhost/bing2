@@ -26,6 +26,10 @@ for(let i = 1; i <= COLUMN_LENGTH * ROW_LENGTH; i++){
     let targetIndex = Math.floor(Math.random() * targetNumber.length) ;     
     div.textContent = targetNumber[targetIndex];
     targetNumber.splice(targetIndex, 1);
+    // ここに変更を加えました。四角形全てに固有のIDを振る処理です。
+    // <div class="square" id="square16"><div>16</div></div>になります。
+    divSquare.setAttribute("id", "square" + targetNumber[targetIndex]);
+    targetNumber.splice(targetIndex, 1);
   }
   divSquare.appendChild(div)
   outer.appendChild(divSquare);
@@ -65,6 +69,10 @@ button.onclick = () => {
     targetNumber.splice(targetIndex, 1);
     historyArray.push(main.textContent);
     history.textContent = historyArray;
+    // ここに変更を加えました。
+    // main.textContentに出た数字が入っていたのでそのidを持つ要素を検索してgrayを付与するように書いています。
+    const div_target = document.getElementById("square" + main.textContent);
+    div_target.classList.add("gray");
   }
 }
 
