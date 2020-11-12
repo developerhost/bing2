@@ -1,6 +1,6 @@
 .card{
   background-color: bisque;
-  padding: 10px;
+  padding: 100px;
   min-width:100px;
 }
 
@@ -56,4 +56,53 @@
 .main {
   font-size: 100px;
   height: 150px;
+  text-align: center;
 }
+
+#history{
+  font-size: 30px;
+  color: #339933;
+  text-align: center;
+}
+
+#button {
+  display: inline-block;
+  text-decoration: none;
+  background: #87befd;
+  color: #fff;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+  border: dashed 1px #fff;
+  transition: .4s;
+  position: relative;
+  left: 45%;
+}
+
+#button:hover {
+  background: #668ad8;
+  box-shadow: 0px 0px 0px 5px #668ad8;
+}
+
+#button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+}
+
