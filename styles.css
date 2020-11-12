@@ -1,0 +1,59 @@
+.card{
+  background-color: bisque;
+  padding: 10px;
+  min-width:100px;
+}
+
+.outer{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.square{
+  box-sizing: border-box;
+  border:solid 2px #9ec34b;
+  background-color: #fff;
+  flex: 0 0 20%;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  text-align: center;
+  font-size: 50px;
+  color: #9ec34b;
+  transition: .4s;
+}
+
+.square:hover {
+  color: #FFF;
+  background: #9ec34b;
+  border-color: #cbe585;
+  
+}
+
+.outer .gray{
+  background-color: #339933;
+  margin-top: 3px;
+}
+
+.square::before{
+  content: '';
+  display: block;
+  padding-top:100%;
+}
+
+.square div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  font-size: 100px;
+  height: 150px;
+}
